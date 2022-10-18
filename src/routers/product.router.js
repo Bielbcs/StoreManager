@@ -1,5 +1,6 @@
 const express = require('express');
 const productController = require('../controllers/product.controller');
+const nameValidation = require('../middlewares/nameValidation');
 
 const router = express.Router();
 
@@ -7,10 +8,6 @@ router.get('/:id', productController.findById);
 
 router.get('/', productController.findAll);
 
-router.post('/', productController.submitProduct);
+router.post('/', nameValidation, productController.submitProduct);
 
-// router.get('/', async (req, res) => { 
-//   const result = await listProducts();
-//   return result;
-// });
 module.exports = router;
