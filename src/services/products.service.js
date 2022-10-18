@@ -6,8 +6,8 @@ const findAll = async () => {
 };
 
 const findById = async (id) => {
-  const product = await productModel.listProducts(id);
-  return { type: null, product };
+  const product = await productModel.findById(Number(id));
+  return { type: null, message: product };
 };
 
 module.exports = {
