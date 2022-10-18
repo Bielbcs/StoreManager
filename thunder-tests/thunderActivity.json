@@ -8,7 +8,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-10-17T22:50:49.809Z",
-    "modified": "2022-10-17T23:18:01.437Z",
+    "modified": "2022-10-18T21:20:35.578Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -19,15 +19,15 @@
     "containerId": "",
     "name": "172.22.0.2:3000/products",
     "url": "localhost:3000/products",
-    "method": "POST",
+    "method": "GET",
     "sortNum": 0,
     "created": "2022-10-17T22:52:11.334Z",
-    "modified": "2022-10-18T13:51:29.806Z",
+    "modified": "2022-10-18T21:19:58.879Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"teste\"\n}",
+      "raw": "{\n  \"name\": \"test\"\n}",
       "form": []
     },
     "tests": []

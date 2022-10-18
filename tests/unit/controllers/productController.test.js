@@ -55,4 +55,19 @@ describe('Camada Controller product', function () {
     expect(res.status).to.have.been.calledWith(404);
     expect(res.json).to.have.been.calledWith({ message: 'Product not found' });
   });
+  it('submitProduct function', async function () {
+    const req = { body: { name: 'aleatorio' } };
+    const res = {};
+
+    const message = { type: null, message: req.body }
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+    sinon.stub(productService, 'submitProduct').resolves({ message });
+
+    await productController.submitProduct(req, res);
+
+    expect(res.status).to.have.been.calledWith(201);
+    expect(res.json).to.have.been.calledWith(message);
+  });
 });

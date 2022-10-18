@@ -10,9 +10,10 @@ const findById = async (id) => {
   return { type: null, message: product };
 };
 
-const submitProduct = async (product) => { 
+const submitProduct = async (product) => {
   const result = await productModel.submitProduct(product);
-  const { message } = await findById(result);
+  const message = await productModel.findById(result);
+
   return { type: null, message };
 };
 

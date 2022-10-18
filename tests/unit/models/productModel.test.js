@@ -18,4 +18,11 @@ describe('Camada Model product', function () {
 
     expect(result).to.be.deep.equal(allProducts[0][1]);
   });
+  it('insert new product', async function () {
+    sinon.stub(connection, 'execute').resolves([{ insertId: 2 }]);
+
+    const result = await productModel.submitProduct({ name: 'test' });
+
+    expect(result).to.be.deep.equal(2);
+  });
 });

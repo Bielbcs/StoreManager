@@ -29,7 +29,7 @@ const submitProduct = async (product) => {
     `INSERT INTO StoreManager.products (${columns}) VALUE (${placeholders})`,
     [...Object.values(product)],
   );
-
+  
   return insertId;
 };
 
