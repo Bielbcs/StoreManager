@@ -10,7 +10,14 @@ const findById = async (id) => {
   return { type: null, message: product };
 };
 
+const submitProduct = async (product) => { 
+  const result = await productModel.submitProduct(product);
+  const { message } = await findById(result);
+  return { type: null, message };
+};
+
 module.exports = {
   findAll,
   findById,
+  submitProduct,
 };

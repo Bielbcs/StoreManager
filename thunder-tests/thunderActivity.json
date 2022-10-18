@@ -18,13 +18,18 @@
     "colId": "history",
     "containerId": "",
     "name": "172.22.0.2:3000/products",
-    "url": "localhost:3000/products/1",
-    "method": "GET",
+    "url": "localhost:3000/products",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-10-17T22:52:11.334Z",
-    "modified": "2022-10-18T00:01:00.247Z",
+    "modified": "2022-10-18T13:40:36.187Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"teste\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

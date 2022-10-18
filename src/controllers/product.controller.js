@@ -12,7 +12,14 @@ const findAll = async (_req, res) => {
   res.status(200).json(products);
 };
 
+const submitProduct = async (req, res) => {
+  const { name } = req.body;
+  const { message } = await productService.submitProduct({ name });
+  res.status(201).json(message);
+};
+
 module.exports = {
   findById,
   findAll,
+  submitProduct,
 };

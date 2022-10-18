@@ -7,6 +7,8 @@ router.get('/:id', productController.findById);
 
 router.get('/', productController.findAll);
 
+router.post('/', productController.submitProduct);
+
 // router.get('/', async (req, res) => { 
 //   const result = await listProducts();
 //   return result;
