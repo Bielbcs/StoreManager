@@ -3,21 +3,13 @@ const connection = require('./connection');
 
 const findById = async (id) => {
   const [[byId]] = await connection.execute(
-    'SELECT * FROM StoreManager.products WHERE id = ?',
+    'SELECT * FROM StoreManager.sales WHERE id = ?',
     [id],
   );
   return byId;
 };
 
-const listProducts = async () => {
-  const [all] = await connection.execute(
-    'SELECT * FROM StoreManager.products',
-  );
-  return all;
-};
-
-const submitProduct = async (product) => {
-  console.log(product);
+const submitSale = async ([product]) => {
   const columns = Object.keys(snakeize(product))
     .map((key) => `${key}`)
     .join(', ');
@@ -27,15 +19,15 @@ const submitProduct = async (product) => {
     .join(', ');
 
   const [{ insertId }] = await connection.execute(
-    `INSERT INTO StoreManager.products (${columns}) VALUE (${placeholders})`,
+    `INSERT INTO StoreManager.sales AND StoreManager.sales_products 
+    (${columns}) VALUE (${placeholders})`,
     [...Object.values(product)],
   );
-  
+
   return insertId;
 };
 
 module.exports = {
-  listProducts,
   findById,
-  submitProduct,
+  submitSale,
 };
