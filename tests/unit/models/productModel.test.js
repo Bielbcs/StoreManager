@@ -25,4 +25,14 @@ describe('Camada Model product', function () {
 
     expect(result).to.be.deep.equal(2);
   });
+  it('updateProduct', async function () {
+    sinon.stub(connection, 'execute').resolves();
+
+    await productModel.updateProduct('teste', 1);
+  });
+  it('deleteProduct', async function () {
+    sinon.stub(connection, 'execute').resolves();
+
+    await productModel.deleteProduct(1);
+  });
 });

@@ -3,12 +3,12 @@ const saleModel = require('../models/sale.model');
 
 const findSaleById = async (id) => {
   const sale = await saleProductModel.findById(Number(id));
-  return { type: null, message: sale };
+  return { message: sale };
 };
 
 const listAllSales = async () => {
   const result = await saleProductModel.listAllSales();
-  return { type: null, message: result };
+  return { message: result };
 };
 
 const submitSale = async (sales) => {
@@ -23,7 +23,7 @@ const submitSale = async (sales) => {
     itemsSold: sales,
   };
 
-  return { type: null, message: object };
+  return { message: object };
 };
 
 module.exports = {

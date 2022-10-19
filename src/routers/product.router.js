@@ -5,7 +5,7 @@ const productValidation = require('../middlewares/productExists');
 
 const router = express.Router();
 
-router.get('/:id', productValidation.productDidExist, productController.findById);
+router.get('/:id', productController.findById);
 
 router.get('/', productController.findAll);
 

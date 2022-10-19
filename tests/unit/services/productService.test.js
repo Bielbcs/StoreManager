@@ -9,7 +9,7 @@ describe('Camada Service product', function () {
   it('findAll function', async function () {
     const [products] = allProducts;
     
-    const expectedResult = { type: null, products };
+    const expectedResult = { products };
 
     sinon.stub(productModel, 'listProducts').returns(products);
 
@@ -20,7 +20,7 @@ describe('Camada Service product', function () {
   it('findById function', async function () {
     const [product] = onlyOneProduct;
 
-    const expectedResult = { type: null, message: product };
+    const expectedResult = { message: product };
 
     sinon.stub(productModel, 'findById').returns(product);
 
@@ -35,6 +35,20 @@ describe('Camada Service product', function () {
     
     const result = await productService.submitProduct({ name: 'aleatorio' });
 
-    expect(result).to.be.deep.equal({ type: null, message });
+    expect(result).to.be.deep.equal({ message });
+  });
+  it('updateProduct function', async function () {
+    const message = [{ id: 2, name: 'aleatorio' }];
+    sinon.stub(productModel, 'updateProduct').resolves();
+    sinon.stub(productModel, 'findById').resolves(message);
+
+    const result = await productService.updateProduct({ name: 'aleatorio' });
+
+    expect(result).to.be.deep.equal({ message });
+  });
+  it('deleteProduct function', async function () {
+    sinon.stub(productModel, 'deleteProduct').resolves();
+
+    await productService.deleteProduct(1);
   });
 });
