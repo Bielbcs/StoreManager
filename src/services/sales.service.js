@@ -16,7 +16,7 @@ const submitSale = async (sales) => {
 
   const promises = sales
     .map((sale) => saleProductModel.insertSales(id, sale.productId, sale.quantity));
-  Promise.all(promises);
+  await Promise.all(promises);
 
   const object = {
     id,

@@ -2,23 +2,31 @@ const productModel = require('../models/product.model');
 
 const findAll = async () => {
   const products = await productModel.listProducts();
-  return { type: null, products };
+  return { products };
 };
 
 const findById = async (id) => {
   const product = await productModel.findById(Number(id));
-  return { type: null, message: product };
+  return { message: product };
 };
 
 const submitProduct = async (product) => {
   const result = await productModel.submitProduct(product);
   const message = await productModel.findById(result);
 
-  return { type: null, message };
+  return { message };
+};
+
+const updateProduct = async (name, id) => {
+  await productModel.updateProduct(name, id);
+  const message = await productModel.findById(id);
+
+  return { message };
 };
 
 module.exports = {
   findAll,
   findById,
   submitProduct,
+  updateProduct,
 };

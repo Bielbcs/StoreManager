@@ -3,7 +3,6 @@ const productService = require('../services/products.service');
 const findById = async (req, res) => {
   const { id } = req.params;
   const { message } = await productService.findById(id);
-  if (!message) res.status(404).json({ message: 'Product not found' });
   res.status(200).json(message); 
 };
 
@@ -23,8 +22,16 @@ const submitProduct = async (req, res) => {
   res.status(201).json(message);
 };
 
+const updateProduct = async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.params;
+  const { message } = await productService.updateProduct(name, Number(id));
+  res.status(200).json(message);
+};
+
 module.exports = {
   findById,
   findAll,
   submitProduct,
+  updateProduct,
 };
