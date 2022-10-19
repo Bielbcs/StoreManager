@@ -17,7 +17,6 @@ const listProducts = async () => {
 };
 
 const submitProduct = async (product) => {
-  console.log(product);
   const columns = Object.keys(snakeize(product))
     .map((key) => `${key}`)
     .join(', ');

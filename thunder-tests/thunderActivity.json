@@ -5,10 +5,10 @@
     "containerId": "",
     "name": "localhost:3000/products",
     "url": "localhost:3000/products",
-    "method": "POST",
+    "method": "GET",
     "sortNum": 0,
     "created": "2022-10-17T22:50:49.809Z",
-    "modified": "2022-10-18T22:01:38.443Z",
+    "modified": "2022-10-19T10:21:51.005Z",
     "headers": [],
     "params": [],
     "body": {
@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-10-18T21:55:50.793Z",
-    "modified": "2022-10-18T22:06:58.769Z",
+    "modified": "2022-10-19T10:36:30.412Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  }\n]",
       "form": []
     },
     "tests": []
