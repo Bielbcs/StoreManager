@@ -5,7 +5,7 @@
   </summary>
   Projeto feito durante o curso da <a href="https://www.betrybe.com/">Trybe</a> para testar os conhecimentos adquiridos.
   </br>
-  Aplicação em Node.js de um CRUD completo de sistema de gerenciamento de vendas utiliazndo MySQL como banco de dados </br>
+  APIRestful em Node.js de um CRUD completo de sistema de gerenciamento de vendas utiliazndo MySQL como banco de dados </br>
   </br>
   <table>
     <tr>
