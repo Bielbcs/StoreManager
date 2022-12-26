@@ -28,7 +28,7 @@
     </tr>
   </table>
   
-  <summary><h3>Projeto 🏆</h3></summary></br>
+  <summary><h3>Projeto 🏆</h3></summary>
   
   #### 1. Rotas dos produtos:
    - Cadastra um novo produto - POST `/products`.
